@@ -220,37 +220,39 @@
       50% { box-shadow: 0 0 20px #ffd700, 0 0 30px #ff8c00, 0 0 40px #ff4500; }
       100% { box-shadow: 0 0 5px #ffd700, 0 0 10px #ff8c00, 0 0 15px #ff4500; }
     }
-    <style>
-  /* Media queries și stiluri responsive */
-  @media (max-width: 768px) {
-    header { flex-direction: column; align-items: flex-start; }
-    nav ul { flex-direction: column; gap: 10px; margin-top: 10px; }
-    .language-switcher { margin-top: 10px; width: 100%; }
-    .product-grid { grid-template-columns: 1fr; }
-    .btn { width: 100%; }
-  }
-</style>
-<style> 
-.actions-container { max-width:800px; margin:50px auto; display:flex; flex-direction:column; gap:20px; }
-    .action-box {
-      padding:25px; background:linear-gradient(to right,#383c4a,#2c2f36);
-      border-radius:20px; box-shadow:0 8px 25px rgba(0,0,0,0.3);
-      text-align:center; color:#ffeecc; font-family:'Raleway',sans-serif;
-    }
-    .action-box p { font-size:1.2rem; margin-bottom:18px; }
-    .action-box button, .action-box a {
-      display:inline-block; font-size:1.05rem; padding:12px 24px;
-      background:#4682B4; /* steel blue */ color:#fff; border:none; border-radius:8px;
-      text-decoration:none; font-weight:bold; box-shadow:0 0 10px rgba(70,130,180,0.6);
-      transition:all .3s; cursor:pointer;
-    }
-    .action-box button:hover, .action-box a:hover {
-      background:#31688E; box-shadow:0 0 20px rgba(70,130,180,0.8); transform:scale(1.05);
-    }
-    @media(max-width:768px) {
-      .actions-container, .action-box button, .action-box a { width:100%; box-sizing:border-box; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header { flex-direction: column; align-items: flex-start; }
+      nav ul { flex-direction: column; gap: 10px; margin-top: 10px; }
+      .language-switcher { margin-top: 10px; width: 100%; }
+      .product-grid { grid-template-columns: 1fr; }
+      .btn { width: 100%; }
+      .actions-container, .action-box button, .action-box a { width: 100%; box-sizing: border-box; }
     }
 
+    .actions-container {
+      max-width: 800px;
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .action-box {
+      padding: 25px;
+      background: linear-gradient(to right, #383c4a, #2c2f36);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      text-align: center;
+      color: #ffeecc;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .action-box p {
+      font-size: 1.2rem;
+      margin-bottom: 18px;
+    }
   </style>
 </head>
 <body>
@@ -260,7 +262,6 @@
       <span class="slogan">Where digital ideas become reality</span>
     </div>
     <div style="display:flex; align-items:center; gap:20px;">
-
       <div class="language-switcher">
         <select onchange="location=this.value">
           <option value="index_eng.html">English</option>
@@ -294,17 +295,17 @@
       Cărțile noastre digitale sunt gândite să îți stârnească curiozitatea și să îți aducă zâmbetul pe buze. CoderoWorld combină informația cu pasiunea și creativitatea.
     </div>
   </div>
-      <!-- Butoanele adăugate exact sub descriere -->
-    <div class="actions-container">
-      <div class="action-box">
-        <p>Dacă ai o întrebare sau vrei să ne spui cât de mult ți‑a plăcut ce ai citit — scrie‑ne!</p>
-        <button onclick="location.href='mailto:coderoworld2025@gmail.com'">Trimite un e‑mail</button>
-      </div>
-      <div class="action-box">
-        <p>Dacă vrei să susții acest proiect independent și inspirațional, ai ocazia acum:</p>
-        <a href="donate.html" target="_blank">Apasă aici pentru a susține proiectul</a>
-      </div>
+
+  <div class="actions-container">
+    <div class="action-box">
+      <p>Dacă ai o întrebare sau vrei să ne spui cât de mult ți‑a plăcut ce ai citit — scrie‑ne!</p>
+      <button class="btn" onclick="location.href='mailto:coderoworld2025@gmail.com'">Trimite un e‑mail</button>
     </div>
+    <div class="action-box">
+      <p>Dacă vrei să susții acest proiect independent și inspirațional, ai ocazia acum:</p>
+      <a href="donate.html" class="btn" target="_blank">Apasă aici pentru a susține proiectul</a>
+    </div>
+  </div>
 
   <footer>
     &copy; 2025 CoderoWorld | Toate drepturile rezervate.
