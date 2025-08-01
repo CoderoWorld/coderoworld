@@ -7,136 +7,52 @@
   <link rel="icon" href="favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #2a2d32;
-      color: #fff;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #ffffff;
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header img {
-      height: 90px;
-      transition: transform 0.3s;
-    }
-
-    header img:hover {
-      transform: scale(1.08);
-    }
-
-    .slogan {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.2rem;
-      color: #444;
-      font-weight: 600;
-      margin-left: 20px;
-      background: linear-gradient(90deg, #007bff, #ff6600);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: slideIn 2s ease-in-out forwards;
-      opacity: 0;
-    }
-
-    @keyframes slideIn {
-      0% { transform: translateX(-30px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #ff6600;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 80px auto;
-      padding: 40px 20px;
-      background: #3b3e44;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-      color: #ffffff;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      color: #ddd;
-    }
-
-    .email {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 28px;
-      font-size: 1rem;
-      background: #007bff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
-      font-weight: bold;
-    }
-
-    .email:hover {
-      background: #005dc0;
-    }
-
-    footer {
-      background: #111;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      margin-top: 60px;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #2a2d32; color: #fff; line-height: 1.6; }
+    header { background: #fff; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+    header img { height: 90px; transition: transform 0.3s; }
+    header img:hover { transform: scale(1.08); }
+    .slogan { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; color: #444; font-weight: 600; margin-left: 20px;
+      background: linear-gradient(90deg, #007bff, #ff6600); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      animation: slideIn 2s ease-in-out forwards; opacity: 0; }
+    @keyframes slideIn { from { transform: translateX(-30px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li a { text-decoration: none; color: #333; font-weight: bold; transition: color 0.3s; }
+    nav ul li a:hover { color: #ff6600; }
+    .language-switcher select { padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc; font-weight: bold;
+      background-color: #f5f5f5; color: #333; cursor: pointer; }
+    .container { max-width: 800px; margin: 80px auto; padding: 40px 20px; background: #3b3e44; border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4); text-align: center; }
+    h1 { font-size: 2.4rem; margin-bottom: 20px; color: #fff; }
+    p { font-size: 1.1rem; margin-bottom: 20px; color: #ddd; }
+    .email { display: inline-block; margin-top: 20px; padding: 14px 28px; font-size: 1rem; background: #007bff; color: #fff;
+      text-decoration: none; border-radius: 8px; transition: background 0.3s; font-weight: bold; }
+    .email:hover { background: #005dc0; }
+    footer { background: #111; color: #fff; padding: 20px; text-align: center; margin-top: 60px; }
   </style>
 </head>
 <body>
   <header>
-    <div style="display: flex; align-items: center;">
+    <div style="display:flex; align-items:center;">
       <a href="index.html"><img src="logo.png" alt="Logo"></a>
       <span class="slogan">Where digital ideas become reality</span>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">eBook</a></li>
-        <li><a href="contact.html">Contactează-ne</a></li>
-        <li><a href="donate.html">Donează</a></li>
-      </ul>
-    </nav>
+    <div style="display:flex; align-items:center; gap:20px;">
+      <nav>
+        <ul>
+          <li><a href="index.html">eBook</a></li>
+          <li><a href="contact.html">Contactează‑ne</a></li>
+          <li><a href="donate.html">Donează</a></li>
+        </ul>
+      </nav>
+      <div class="language-switcher">
+        <select onchange="location = this.value">
+          <option value="contact_eng.html">English</option>
+          <option value="contact.html" selected>Română</option>
+        </select>
+      </div>
+    </div>
   </header>
 
   <div class="container">
