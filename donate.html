@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Donează | CoderoWorld</title>
-  <!-- Favicon -->
   <link rel="icon" href="favicon.png" type="image/png">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -35,12 +33,30 @@
     }
 
     header img {
-      height: 70px;
+      height: 90px;
       transition: transform 0.3s;
     }
 
     header img:hover {
-      transform: scale(1.05);
+      transform: scale(1.08);
+    }
+
+    .slogan {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
+      color: #444;
+      font-weight: 600;
+      margin-left: 20px;
+      background: linear-gradient(90deg, #007bff, #ff6600);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: slideIn 2s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateX(-30px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
     }
 
     nav ul {
@@ -87,16 +103,18 @@
       margin-top: 20px;
       padding: 14px 28px;
       font-size: 1rem;
-      background: #007bff;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
       color: #fff;
       text-decoration: none;
       border-radius: 8px;
-      transition: background 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       font-weight: bold;
+      box-shadow: 0 0 10px #ff4b2b80;
     }
 
     .btn:hover {
-      background: #005dc0;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #ff4b2b;
     }
 
     .thanks {
@@ -129,7 +147,10 @@
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Logo">
+    <div style="display: flex; align-items: center;">
+      <a href="index.html"><img src="logo.png" alt="Logo"></a>
+      <span class="slogan">Where digital ideas become reality</span>
+    </div>
     <nav>
       <ul>
         <li><a href="index.html">eBook</a></li>
@@ -146,7 +167,7 @@
       Îți plac ebook-urile noastre? Vrei să susții munca din spatele fiecărui paragraf, glumă sau idee practică?<br>
       Poți face o donație – și ne ajuți să continuăm acest proiect creativ independent.
     </p>
-    <a href="https://coderoworld.gumroad.com/l/donate" target="_blank" class="btn">Donează aici </a>
+    <a href="https://coderoworld.gumroad.com/l/donate" target="_blank" class="btn">Donează aici</a>
     <p class="thanks">Îți mulțumim pentru sprijin! 🙏</p>
     <p class="joke">PS: O donație e ca un like… dar în viața reală! 😎</p>
   </div>
