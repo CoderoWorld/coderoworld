@@ -34,17 +34,6 @@
     .thanks { margin-top:30px; font-size:1.1rem; color:#00ffae; font-weight:600;}
     .joke { font-size:1rem; color:#aaa; margin-top:15px; font-style:italic;}
     footer { background:#111; color:#fff; padding:20px; text-align:center; margin-top:60px;}
-    <style>
-  /* Media queries și stiluri responsive */
-  @media (max-width: 768px) {
-    header { flex-direction: column; align-items: flex-start; }
-    nav ul { flex-direction: column; gap: 10px; margin-top: 10px; }
-    .language-switcher { margin-top: 10px; width: 100%; }
-    .product-grid { grid-template-columns: 1fr; }
-    .btn { width: 100%; }
-  }
-</style>
-
   </style>
 </head>
 <body>
@@ -54,13 +43,7 @@
       <span class="slogan">Where digital ideas become reality</span>
     </div>
     <div style="display:flex; align-items:center; gap:20px;">
-      <nav>
-        <ul>
-          <li><a href="index_eng.html">Home</a></li>
-          <li><a href="contact_eng.html">Contact Us</a></li>
-          <li><a href="donate_eng.html">Donate</a></li>
-        </ul>
-      </nav>
+
       <div class="language-switcher">
         <select onchange="location = this.value">
           <option value="donate_eng.html" selected>English</option>
