@@ -1,57 +1,256 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | CoderoWorld</title>
+  <meta name="description" content="Discover creative and original digital eBooks from CoderoWorld. Technology, humor, and digital inspiration all in one place!">
+  <meta name="keywords" content="ebooks, digital book, CoderoWorld, gumroad, your car, romanian ebook, english ebook, tech ebooks">
+  <meta name="author" content="CoderoWorld">
+  <title>Acasa | CoderoWorld</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.png" type="image/png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@600&family=Raleway:ital,wght@0,400;1,600&family=Bungee&display=swap" rel="stylesheet">
+
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Inter',sans-serif; background:#2a2d32; color:#fff; line-height:1.6; }
-    header { background:#fff; padding:20px 40px; display:flex; align-items:center; justify-content:space-between;
-      position:sticky; top:0; z-index:1000; box-shadow:0 2px 15px rgba(0,0,0,0.1); }
-    header img { height:90px; transition:transform .3s; }
-    header img:hover { transform:scale(1.08); }
-    .slogan { font-family:'Orbitron',sans-serif; font-size:1.2rem; margin-left:20px;
-      background:linear-gradient(90deg,#007bff,#ff6600); -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent; animation:slideIn 2s ease-in-out forwards; opacity:0; color:#444; font-weight:600; }
-    @keyframes slideIn { from{transform:translateX(-30px);opacity:0;} to{transform:translateX(0);opacity:1;} }
-    nav ul { list-style:none; display:flex; gap:20px; }
-    nav ul li a { text-decoration:none; color:#333; font-weight:bold; transition:color .3s; }
-    nav ul li a:hover { color:#ff6600; }
-    .language-switcher select { padding:6px 10px; border-radius:6px; border:1px solid #ccc;
-      background:#f5f5f5; color:#333; font-weight:bold; cursor:pointer; }
-    .container { max-width:1200px; margin:40px auto; padding:0 20px; }
-    h2 { font-size:2.5rem; text-align:center; margin-bottom:20px;
-      color:#fff; animation:fadeIn 1s ease-in-out; }
-    @keyframes fadeIn { from{transform:translateY(-10px);opacity:0;} to{transform:translateY(0);opacity:1;} }
-    .product-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; }
-    .product-card { background:#3b3e44; padding:20px; border-radius:10px; text-align:center;
-      box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:transform .3s, box-shadow .3s; }
-    .product-card:hover { transform:translateY(-8px); box-shadow:0 6px 16px rgba(0,0,0,0.4); }
-    .product-card img { max-width:100%; border-radius:8px; margin-bottom:15px; }
-    .product-card h3 { font-size:1.3rem; margin-bottom:10px; color:#fff; }
-    .btn { margin-top:15px; padding:12px 20px; background:linear-gradient(135deg,#007bff,#00c6ff);
-      color:#fff; border:none; border-radius:8px; font-weight:bold; text-decoration:none;
-      transition:background .3s,transform .2s; display:inline-block; }
-    .btn:hover { background:linear-gradient(135deg,#005dc0,#0096ff); transform:scale(1.05); }
-    .bestseller { background:gold; color:#000; padding:4px 10px; border-radius:6px;
-      font-size:.9rem; font-weight:bold; box-shadow:0 2px 6px rgba(0,0,0,0.3);
-      animation:glowPulse 2s infinite; margin-left:10px; }
-    @keyframes glowPulse { 0%,100%{box-shadow:0 0 5px #ffd700,0 0 10px #ff8c00,0 0 15px #ff4500;}
-      50%{box-shadow:0 0 20px #ffd700,0 0 30px #ff8c00,0 0 40px #ff4500;} }
-    .description { text-align:center; font-family:'Raleway',sans-serif; font-size:1.4rem;
-      color:#ffeecc; padding:40px 20px; background:linear-gradient(to right,#383c4a,#2c2f36);
-      border-radius:20px; box-shadow:0 8px 30px rgba(0,0,0,0.3); margin-top:60px;
-      animation:fadeInUp 1.2s ease-in-out; }
-    @keyframes fadeInUp { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
-    footer { background:#111; color:#ccc; text-align:center; padding:20px; font-size:.9rem; }
-    @media(max-width:768px) {
-      header { flex-direction:column; align-items:flex-start; }
-      nav ul { flex-direction:column; gap:10px; margin-top:10px; }
-      .language-switcher { margin-top:10px; width:100%; }
-      .product-grid { grid-template-columns:1fr; }
-      .btn { width:100%; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #2a2d32;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 90px;
+      transition: transform 0.3s;
+    }
+
+    header img:hover {
+      transform: scale(1.08);
+    }
+
+    .slogan {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
+      color: #444;
+      font-weight: 600;
+      margin-left: 20px;
+      background: linear-gradient(90deg, #007bff, #ff6600);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: slideIn 2s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateX(-30px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff6600;
+    }
+
+    .language-switcher {
+      margin-left: 20px;
+    }
+
+    .language-switcher select {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-weight: bold;
+      background-color: #f5f5f5;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #fff;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #F02626;
+      text-align: center;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: #3b3e44;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .product-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #005dc0, #0096ff);
+      transform: scale(1.05);
+    }
+
+    .description {
+      text-align: center;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.4rem;
+      color: #ffeecc;
+      padding: 40px 20px;
+      background: linear-gradient(to right, #383c4a, #2c2f36);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      margin-top: 60px;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .bestseller {
+      background-color: gold;
+      color: #000;
+      padding: 4px 10px;
+      margin-left: 10px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      animation: glowPulse 2s infinite;
+    }
+
+    @keyframes glowPulse {
+      0% { box-shadow: 0 0 5px #ffd700, 0 0 10px #ff8c00, 0 0 15px #ff4500; }
+      50% { box-shadow: 0 0 20px #ffd700, 0 0 30px #ff8c00, 0 0 40px #ff4500; }
+      100% { box-shadow: 0 0 5px #ffd700, 0 0 10px #ff8c00, 0 0 15px #ff4500; }
+    }
+    <style>
+  /* Media queries și stiluri responsive */
+  @media (max-width: 768px) {
+    header { flex-direction: column; align-items: flex-start; }
+    nav ul { flex-direction: column; gap: 10px; margin-top: 10px; }
+    .language-switcher { margin-top: 10px; width: 100%; }
+    .product-grid { grid-template-columns: 1fr; }
+    .btn { width: 100%; }
+  }
+</style>
+<style> 
+.actions-container { max-width:800px; margin:50px auto; display:flex; flex-direction:column; gap:20px; }
+    .action-box {
+      padding:25px; background:linear-gradient(to right,#383c4a,#2c2f36);
+      border-radius:20px; box-shadow:0 8px 25px rgba(0,0,0,0.3);
+      text-align:center; color:#ffeecc; font-family:'Raleway',sans-serif;
+    }
+    .action-box p { font-size:1.2rem; margin-bottom:18px; }
+    .action-box button, .action-box a {
+      display:inline-block; font-size:1.05rem; padding:12px 24px;
+      background:#4682B4; /* steel blue */ color:#fff; border:none; border-radius:8px;
+      text-decoration:none; font-weight:bold; box-shadow:0 0 10px rgba(70,130,180,0.6);
+      transition:all .3s; cursor:pointer;
+    }
+    .action-box button:hover, .action-box a:hover {
+      background:#31688E; box-shadow:0 0 20px rgba(70,130,180,0.8); transform:scale(1.05);
+    }
+    @media(max-width:768px) {
+      .actions-container, .action-box button, .action-box a { width:100%; box-sizing:border-box; }
+    }
+
   </style>
 </head>
 <body>
@@ -61,13 +260,7 @@
       <span class="slogan">Where digital ideas become reality</span>
     </div>
     <div style="display:flex; align-items:center; gap:20px;">
-      <nav>
-        <ul>
-          <li><a href="index.html">Acasă</a></li>
-          <li><a href="contact.html">Contactează-ne</a></li>
-          <li><a href="donate.html">Donează</a></li>
-        </ul>
-      </nav>
+
       <div class="language-switcher">
         <select onchange="location=this.value">
           <option value="index_eng.html">English</option>
@@ -101,6 +294,17 @@
       Cărțile noastre digitale sunt gândite să îți stârnească curiozitatea și să îți aducă zâmbetul pe buze. CoderoWorld combină informația cu pasiunea și creativitatea.
     </div>
   </div>
+      <!-- Butoanele adăugate exact sub descriere -->
+    <div class="actions-container">
+      <div class="action-box">
+        <p>Dacă ai o întrebare sau vrei să ne spui cât de mult ți‑a plăcut ce ai citit — scrie‑ne!</p>
+        <button onclick="location.href='mailto:coderoworld2025@gmail.com'">Trimite un e‑mail</button>
+      </div>
+      <div class="action-box">
+        <p>Dacă vrei să susții acest proiect independent și inspirațional, ai ocazia acum:</p>
+        <a href="donate.html" target="_blank">Apasă aici pentru a susține proiectul</a>
+      </div>
+    </div>
 
   <footer>
     &copy; 2025 CoderoWorld | Toate drepturile rezervate.
