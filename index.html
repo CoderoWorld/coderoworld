@@ -3,44 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Descoperă eBook-uri digitale creative și originale de la CoderoWorld. Tehnologie, umor și inspirație digitală într-un singur loc!">
-  <meta name="keywords" content="ebooks, carte digitala, CoderoWorld, gumroad, your car, ebook romania, ebook engleza, tech ebooks">
+  <meta name="description" content="Descoperă eBook-uri digitale creative și originale de la CoderoWorld.">
+  <meta name="keywords" content="ebooks, CoderoWorld, carte digitală, tech ebooks">
   <meta name="author" content="CoderoWorld">
   <title>Home | CoderoWorld</title>
-
-  <!-- Favicon -->
   <link rel="icon" href="favicon.png" type="image/png">
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@600&family=Raleway:ital,wght@0,400;1,600&family=Bungee&display=swap" rel="stylesheet">
-
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background: #2a2d32; color: #fff; line-height: 1.6; }
-    header { background: #fff; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 15px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+    header { background: #fff; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
     header img { height: 90px; transition: transform 0.3s; }
     header img:hover { transform: scale(1.08); }
-    .slogan { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; color: #444; font-weight: 600; margin-left: 20px; background: linear-gradient(90deg, #007bff, #ff6600); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: slideIn 2s ease-in-out forwards; opacity: 0; }
-    @keyframes slideIn { 0% { transform: translateX(-30px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+    .slogan { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; margin-left: 20px; background: linear-gradient(90deg, #007bff, #ff6600); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: slideIn 2s ease-in-out forwards; opacity: 0; color: #444; font-weight: 600; }
+    @keyframes slideIn { from { transform: translateX(-30px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
     nav ul { list-style: none; display: flex; gap: 20px; }
     nav ul li a { text-decoration: none; color: #333; font-weight: bold; transition: color 0.3s; }
     nav ul li a:hover { color: #ff6600; }
     .language-switcher select { padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc; font-weight: bold; background-color: #f5f5f5; color: #333; cursor: pointer; }
     .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-    h2 { font-size: 2.5rem; margin-bottom: 20px; color: #fff; text-align: center; animation: fadeIn 1s ease-in-out; }
-    @keyframes fadeIn { 0% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 1; transform: translateY(0); } }
-    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 30px; }
-    .product-card { background: #3b3e44; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+    h2 { font-size: 2.5rem; text-align: center; color: #fff; margin-bottom: 20px; animation: fadeIn 1s ease-in-out; }
+    @keyframes fadeIn { from { transform: translateY(-10px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 30px; }
+    .product-card { background: #3b3e44; padding: 20px; border-radius: 10px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
     .product-card:hover { transform: translateY(-8px); box-shadow: 0 6px 16px rgba(0,0,0,0.4); }
     .product-card img { max-width: 100%; border-radius: 8px; margin-bottom: 15px; }
-    .product-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: #fff; }
-    .btn { display: inline-block; margin-top: 15px; padding: 12px 20px; background: linear-gradient(135deg, #007bff, #00c6ff); color: #fff; border: none; border-radius: 8px; font-weight: bold; transition: background 0.3s, transform 0.2s; }
+    .product-card h3 { font-size: 1.3rem; color: #fff; margin-bottom: 10px; }
+    .btn { display: inline-block; margin-top: 15px; padding: 12px 20px; background: linear-gradient(135deg, #007bff, #00c6ff); color: #fff; border-radius: 8px; font-weight: bold; text-decoration: none; transition: background 0.3s, transform 0.2s; }
     .btn:hover { background: linear-gradient(135deg, #005dc0, #0096ff); transform: scale(1.05); }
+    .bestseller { background: gold; color: #000; padding: 4px 10px; border-radius: 6px; font-weight: bold; box-shadow: 0 2px 6px rgba(0,0,0,0.3); animation: glowPulse 2s infinite; margin-left:10px; font-size:0.9rem; }
+    @keyframes glowPulse { 0%,100% { box-shadow: 0 0 5px #ffd700, 0 0 10px #ff8c00, 0 0 15px #ff4500;} 50% { box-shadow: 0 0 20px #ffd700, 0 0 30px #ff8c00, 0 0 40px #ff4500;} }
     .description { text-align: center; font-family: 'Raleway', sans-serif; font-size: 1.4rem; color: #ffeecc; padding: 40px 20px; background: linear-gradient(to right,#383c4a,#2c2f36); border-radius:20px; box-shadow:0 8px 30px rgba(0,0,0,0.3); margin-top:60px; animation: fadeInUp 1.2s ease-in-out; }
-    @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(20px);} 100% { opacity: 1; transform: translateY(0);} }
-    .bestseller { background-color: gold; color:#000; padding:4px 10px; margin-left:10px; border-radius:6px; font-size:0.9rem; font-weight:bold; box-shadow:0 2px 6px rgba(0,0,0,0.3); animation: glowPulse 2s infinite; }
-    @keyframes glowPulse { 0%,100% { box-shadow:0 0 5px #ffd700,0 0 10px #ff8c00,0 0 15px #ff4500; } 50% { box-shadow:0 0 20px #ffd700,0 0 30px #ff8c00,0 0 40px #ff4500; } }
-    .description { color: #ffeecc; }
+    @keyframes fadeInUp { from { transform: translateY(20px); opacity:0; } to { transform: translateY(0); opacity:1; } }
+    footer { background: #111; color: #ccc; text-align: center; padding: 20px; font-size: 0.9rem; }
+    footer .footer-center { max-width: 1200px; margin: 0 auto; }
+    @media(max-width:768px) {
+      header { flex-direction: column; align-items: flex-start; }
+      nav ul { flex-direction: column; gap:10px; margin-top:10px; }
+      .language-switcher { margin-top:10px; }
+      .product-grid { grid-template-columns:1fr; }
+      .btn, .language-switcher select { width:100%; }
+    }
   </style>
 </head>
 <body>
@@ -58,7 +61,7 @@
         </ul>
       </nav>
       <div class="language-switcher">
-        <select onchange="location = this.value">
+        <select onchange="location=this.value">
           <option value="index_eng.html">English</option>
           <option value="index.html" selected>Română</option>
         </select>
@@ -73,264 +76,8 @@
         <div class="product-card">
           <img src="carte1.png" alt="eBook 1">
           <h3>Your Car | RO & ENG</h3>
-          <div style="margin-top:10px; margin-bottom:10px;">
-            <span style="background-color:#ff4d4d; color:white; padding:5px 12px; display:inline-block; border-radius:8px; font-weight:bold; font-size:1.1rem;">2.99€</span>
-            <span class="bestseller">🔥 Best Seller</span>
-          </div>
-          <a href="https://coderoworld.gumroad.com/l/yourcar_codero" class="btn" target="_blank">Cumpără acum</a>
-        </div>
-        <div class="product-card">
-          <img src="carte2.png" alt="eBook 2">
-          <h3>🔔 ÎN CURÂND 🔔</h3>
-          <a href="https://coderoworld.gumroad.com/" class="btn" target="_blank">Indisponibil</a>
-        </div>
-      </div>
-    </section>
-
-    <div class="description">
-      Cărțile noastre digitale sunt gândite pentru a‑ți stârni curiozitatea și a‑ți aduce zâmbetul pe buze. CoderoWorld combină informația cu pasiunea și creativitatea.
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 Codero World | Toate drepturile rezervate.
-  </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Descoperă eBook-uri digitale creative și originale de la CoderoWorld. Tehnologie, umor și inspirație digitală într-un singur loc!">
-  <meta name="keywords" content="ebooks, carte digitala, CoderoWorld, gumroad, your car, ebook romania, ebook engleza, tech ebooks">
-  <meta name="author" content="CoderoWorld">
-  <title>Home | CoderoWorld</title>
-
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.png" type="image/png">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@600&family=Raleway:ital,wght@0,400;1,600&family=Bungee&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #2a2d32;
-      color: #fff;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #ffffff;
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header img {
-      height: 90px;
-      transition: transform 0.3s;
-    }
-
-    header img:hover {
-      transform: scale(1.08);
-    }
-
-    .slogan {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.2rem;
-      color: #444;
-      font-weight: 600;
-      margin-left: 20px;
-      background: linear-gradient(90deg, #007bff, #ff6600);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: slideIn 2s ease-in-out forwards;
-      opacity: 0;
-    }
-
-    @keyframes slideIn {
-      0% { transform: translateX(-30px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #ff6600;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    section {
-      margin-bottom: 60px;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #fff;
-      text-align: center;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    h4 {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      color: #F02626;
-      text-align: center;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .product-card {
-      background: #3b3e44;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-    }
-
-    .product-card img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-
-    .product-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 20px;
-      background: linear-gradient(135deg, #007bff, #00c6ff);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .btn:hover {
-      background: linear-gradient(135deg, #005dc0, #0096ff);
-      transform: scale(1.05);
-    }
-
-    .description {
-      text-align: center;
-      font-family: 'Raleway', sans-serif;
-      font-size: 1.4rem;
-      color: #ffeecc;
-      padding: 40px 20px;
-      background: linear-gradient(to right, #383c4a, #2c2f36);
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-      margin-top: 60px;
-      animation: fadeInUp 1.2s ease-in-out;
-    }
-
-    footer {
-      background: #111;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(-10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .bestseller {
-      background-color: gold;
-      color: #000;
-      padding: 4px 10px;
-      margin-left: 10px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: bold;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      animation: glowPulse 2s infinite;
-    }
-
-    @keyframes glowPulse {
-      0% { box-shadow: 0 0 5px #ffd700, 0 0 10px #ff8c00, 0 0 15px #ff4500; }
-      50% { box-shadow: 0 0 20px #ffd700, 0 0 30px #ff8c00, 0 0 40px #ff4500; }
-      100% { box-shadow: 0 0 5px #ffd700, 0 0 10px #ff8c00, 0 0 15px #ff4500; }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div style="display: flex; align-items: center;">
-      <a href="index.html"><img src="logo.png" alt="Logo"></a>
-      <span class="slogan">Where digital ideas become reality</span>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">eBook</a></li>
-        <li><a href="contact.html">Contactează-ne</a></li>
-        <li><a href="donate.html">Donează</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="container">
-    <section id="ebooks">
-      <h2>eBook-urile noastre</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="carte1.png" alt="eBook 1">
-          <h3>Your Car | RO & ENG</h3>
-          <div style="margin-top: 10px; margin-bottom: 10px;">
-            <span style="background-color: #ff4d4d; color: white; padding: 5px 12px; display: inline-block; border-radius: 8px; font-weight: bold; font-size: 1.1rem;">2.99€</span>
+          <div style="margin:10px 0;">
+            <span style="background:#ff4d4d; color:#fff; padding:5px 12px; border-radius:8px; font-weight:bold; font-size:1.1rem;">2.99€</span>
             <span class="bestseller">🔥 Best Seller</span>
           </div>
           <a href="https://coderoworld.gumroad.com/l/yourcar_codero" class="btn" target="_blank">Cumpără acum</a>
@@ -338,19 +85,17 @@
         <div class="product-card">
           <img src="carte2.png" alt="eBook 2">
           <h3>🔔 ÎN CURÂND 🔔</h3>
-          <h4> </h4>
           <a href="https://coderoworld.gumroad.com/" class="btn" target="_blank">Indisponibil</a>
         </div>
       </div>
     </section>
-
     <div class="description">
-      Cărțile noastre digitale sunt gândite pentru a-ți stârni curiozitatea și a-ți aduce zâmbetul pe buze. CoderoWorld combină informația cu pasiunea și creativitatea.
+      Cărțile noastre digitale sunt gândite pentru a‑ți stârni curiozitatea și a‑ți aduce zâmbetul pe buze. CoderoWorld combină informația cu pasiunea și creativitatea.
     </div>
   </div>
 
   <footer>
-    &copy; 2025 Codero World | Toate drepturile rezervate.
+    <div class="footer-center">&copy; 2025 CoderoWorld | Toate drepturile rezervate.</div>
   </footer>
 </body>
 </html>
