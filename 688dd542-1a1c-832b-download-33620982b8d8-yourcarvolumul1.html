@@ -86,81 +86,111 @@
     .subtext-container p {
       margin: 6px 0;
     }
+	
+    .ilegal-container {
+      max-width: 600px;
+      color: #F54927;
+      font-weight: 400;
+      font-size: 0.9rem;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.5;
+      letter-spacing: 0.03em;
+      user-select: text;
+      margin-bottom: 45px;
+    }
+    .ilegal-container p {
+      margin: 6px 0;
+    }
+	
+    .atentie-container { 
+      max-width: 600px;
+      color: #27F568;
+      font-weight: 400;
+      font-size: 1.2rem;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 4.5;
+      letter-spacing: 0.03em;
+      user-select: text;
+      margin-bottom: 45px;
+    }
+    .atentie-container p {
+      margin: 6px 0;
+    }
 
     /* Container pentru buton + dropdown */
     .download-container {
       position: relative;
-      display: inline-block;
+      width: 280px;
+      margin-bottom: 40px;
+      user-select: none;
     }
 
-    /* Butonul albastru deschis */
-    button#downloadBtn {
-      display: inline-flex;
+    /* Butonul principal */
+    #downloadBtn {
+      width: 100%;
+      padding: 16px 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      background-color: #2980b9; /* albastru închis */
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #2980b9aa;
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      padding: 18px 50px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: #fff;
-      background: #5dadef;
-      border-radius: 12px;
-      box-shadow:
-        0 0 8px #5dadef66,
-        0 0 20px #5dadef44;
-      border: none;
-      text-decoration: none;
+      gap: 10px;
       user-select: none;
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-      cursor: pointer;
-      filter: drop-shadow(0 0 5px #5dadefbb);
+      transition: background-color 0.3s ease;
     }
-    button#downloadBtn:hover {
-      box-shadow:
-        0 0 14px #5dadefcc,
-        0 0 30px #5dadefff;
-      transform: scale(1.07);
-      filter: drop-shadow(0 0 8px #5dadefff);
+
+    #downloadBtn:hover {
+      background-color: #1c5f8a;
+      box-shadow: 0 0 15px #1c5f8aaa;
     }
-    button#downloadBtn:active {
-      transform: scale(0.95);
-      box-shadow: none;
-      filter: brightness(1.2);
-    }
-    button#downloadBtn svg {
-      width: 26px;
-      height: 26px;
-      fill: white;
-      filter: drop-shadow(0 0 3px #d0e9ff);
+
+    #downloadBtn svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
     }
 
     /* Meniul dropdown */
-    .download-menu {
+    #downloadMenu {
       position: absolute;
-      top: 110%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #5dadef;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      padding: 10px 0;
-      min-width: 180px;
-      z-index: 100;
-      user-select: none;
+      top: calc(100% + 8px);
+      left: 0;
+      width: 100%;
+      background-color: #2980b9;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
       display: none;
+      flex-direction: column;
+      z-index: 100;
     }
-    .download-menu a {
-      display: block;
-      color: white;
+
+    #downloadMenu a {
+      padding: 14px 18px;
+      color: #fff;
       font-weight: 700;
-      padding: 12px 24px;
       text-decoration: none;
-      font-family: 'Poppins', sans-serif;
-      transition: background-color 0.3s ease;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      user-select: none;
+      transition: background-color 0.25s ease;
     }
-    .download-menu a:hover {
-      background-color: #3a78d6;
+
+    #downloadMenu a:last-child {
+      border-bottom: none;
+    }
+
+    #downloadMenu a:hover {
+      background-color: #1c5f8a;
+    }
+
+    /* Afișare meniului */
+    .download-container.open #downloadMenu {
+      display: flex;
     }
 
     footer {
@@ -182,20 +212,23 @@
         font-size: 2.8rem;
         white-space: normal;
       }
-      .subtext-container {
+      .subtext-container, .ilegal-container, .atentie-container {
         font-size: 1rem;
         max-width: 90%;
+        line-height: 1.5;
       }
-      button#downloadBtn {
+      .download-container {
         width: 100%;
-        padding: 16px 0;
-        font-size: 1.25rem;
-        justify-content: center;
+        max-width: 280px;
       }
-      .download-menu {
+      #downloadBtn {
+        font-size: 1.25rem;
+        padding: 14px 0;
+      }
+      #downloadMenu {
         min-width: 100%;
         left: 0;
-        transform: none;
+        top: calc(100% + 6px);
       }
     }
   </style>
@@ -213,7 +246,7 @@
       <p>Mai jos aveți un buton de unde puteți descărca ebook-ul achiziționat:</p>
     </div>
 
-    <div class="download-container">
+    <div class="download-container" id="downloadContainer">
       <button id="downloadBtn" type="button" aria-haspopup="true" aria-expanded="false">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path d="M5 20h14v-2H5v2zm7-18l-5 5h3v6h4v-6h3l-5-5z"/>
@@ -223,9 +256,18 @@
 
       <div id="downloadMenu" class="download-menu" role="menu" aria-label="Meniu descărcări">
         <a href="your_car_vol1.pdf" download role="menuitem" tabindex="-1">eBook | Your Car</a>
-        <a href="checklist.pdf" download role="menuitem" tabindex="-1">Bonus 2(PDF)</a>
-        <a href="concediucumasina.pdf" download role="menuitem" tabindex="-1">Bonus 3(PDF)</a>
+        <a href="checklist.pdf" download role="menuitem" tabindex="-1">Bonus 2 (PDF)</a>
+        <a href="concediucumasina.pdf" download role="menuitem" tabindex="-1">Bonus 3 (PDF)</a>
       </div>
+    </div>
+
+    <div class="atentie-container"> 
+      <p>PS: descarcă toate fișierele ACUM, inclusiv bonusurile.</p>
+    </div>
+
+
+    <div class="ilegal-container"> 
+      <p>Atenție! Răspândirea linkului de descărcare este ilegală.</p>
     </div>
   </main>
 
@@ -234,23 +276,21 @@
   </footer>
 
   <script>
-    const btn = document.getElementById('downloadBtn');
-    const menu = document.getElementById('downloadMenu');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const downloadContainer = document.getElementById('downloadContainer');
 
-    btn.addEventListener('click', () => {
-      const isVisible = menu.style.display === 'block';
-      menu.style.display = isVisible ? 'none' : 'block';
-      btn.setAttribute('aria-expanded', !isVisible);
+    downloadBtn.addEventListener('click', () => {
+      const isOpen = downloadContainer.classList.toggle('open');
+      downloadBtn.setAttribute('aria-expanded', isOpen);
     });
 
-    // Ascunde meniul dacă dai click în afară
+    // Ascunde meniul când dai click în afara lui
     document.addEventListener('click', (e) => {
-      if (!btn.contains(e.target) && !menu.contains(e.target)) {
-        menu.style.display = 'none';
-        btn.setAttribute('aria-expanded', false);
+      if (!downloadContainer.contains(e.target)) {
+        downloadContainer.classList.remove('open');
+        downloadBtn.setAttribute('aria-expanded', false);
       }
     });
   </script>
 </body>
 </html>
-
